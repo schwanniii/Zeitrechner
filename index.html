@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Zeitrechner</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="container">
+		<h1>Zeitrechner</h1>
+
+		<section class="card">
+			<h2>Differenz berechnen (max. 24 Stunden)</h2>
+			<p class="small">Nur Uhrzeiten eingeben; bei Überlauf wird der nächste Tag angenommen.</p>
+			<label>Startzeit
+				<input id="start-dt" type="time" step="1" placeholder="HH:MM:SS">
+			</label>
+			<label>Endzeit
+				<input id="end-dt" type="time" step="1" placeholder="HH:MM:SS">
+			</label>
+			<div class="actions">
+				<button id="calc-diff">Differenz berechnen</button>
+				<button id="clear-diff" class="secondary">Zurücksetzen</button>
+			</div>
+			<p class="result" id="diff-result" aria-live="polite"></p>
+		</section>
+
+		<section class="card">
+			<h2>Endzeit aus Start + Dauer</h2>
+			<p class="small">Nur Uhrzeit als Start; Dauer darf bis zu 24 Stunden betragen.</p>
+			<label>Startzeit
+				<input id="add-start-dt" type="time" step="1" placeholder="HH:MM:SS">
+			</label>
+			<div class="duration-row">
+				<label>Stunden <input id="dur-hours" type="number" min="0" value="0"></label>
+				<label>Minuten <input id="dur-mins" type="number" min="0" max="59" value="0"></label>
+				<label>Sekunden <input id="dur-secs" type="number" min="0" max="59" value="0"></label>
+			</div>
+			<div class="actions">
+				<button id="calc-add">Endzeit berechnen</button>
+				<button id="clear-add" class="secondary">Zurücksetzen</button>
+			</div>
+			<p class="result" id="add-result" aria-live="polite"></p>
+		</section>
+
+		<footer>
+			<p class="small">Einfach `index.html` im Browser öffnen oder einen kleinen HTTP-Server starten.</p>
+		</footer>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
