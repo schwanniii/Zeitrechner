@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Zeitrechner</title>
+	<title>Zeitrechner - Professionelles Zeitttool</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,13 +12,18 @@
 
 		<section class="card">
 			<h2>Differenz berechnen (max. 24 Stunden)</h2>
-			<p class="small">Nur Uhrzeiten eingeben; bei Überlauf wird der nächste Tag angenommen.</p>
-			<label>Startzeit
-				<input id="start-dt" type="time" step="1" placeholder="HH:MM:SS">
-			</label>
-			<label>Endzeit
-				<input id="end-dt" type="time" step="1" placeholder="HH:MM:SS">
-			</label>
+			<p class="small">Geben Sie zwei Uhrzeiten ein. Bei Überlauf (Endzeit vor Startzeit) wird der nächste Tag angenommen.</p>
+			
+			<div class="input-group">
+				<label for="start-dt">Startzeit</label>
+				<input id="start-dt" type="time" step="1">
+			</div>
+
+			<div class="input-group">
+				<label for="end-dt">Endzeit</label>
+				<input id="end-dt" type="time" step="1">
+			</div>
+
 			<div class="actions">
 				<button id="calc-diff">Differenz berechnen</button>
 				<button id="clear-diff" class="secondary">Zurücksetzen</button>
@@ -28,14 +33,28 @@
 
 		<section class="card">
 			<h2>Endzeit aus Start + Dauer</h2>
-			<p class="small">Nur Uhrzeit als Start; Dauer darf bis zu 24 Stunden betragen.</p>
-			<label>Startzeit
-				<input id="add-start-dt" type="time" step="1" placeholder="HH:MM:SS">
-			</label>
-			<div class="duration-row">
-				<label>Stunden <input id="dur-hours" type="number" min="0" value="0"></label>
-				<label>Minuten <input id="dur-mins" type="number" min="0" max="59" value="0"></label>
+			<p class="small">Geben Sie eine Startzeit und die gewünschte Dauer (max. 24 Stunden) ein.</p>
+			
+			<div class="input-group">
+				<label for="add-start-dt">Startzeit</label>
+				<input id="add-start-dt" type="time" step="1">
 			</div>
+
+			<div class="duration-row">
+				<div class="duration-col">
+					<label for="dur-hours">Stunden</label>
+					<input id="dur-hours" type="number" min="0" value="0">
+				</div>
+				<div class="duration-col">
+					<label for="dur-mins">Minuten</label>
+					<input id="dur-mins" type="number" min="0" max="59" value="0">
+				</div>
+				<div class="duration-col">
+					<label for="dur-secs">Sekunden</label>
+					<input id="dur-secs" type="number" min="0" max="59" value="0">
+				</div>
+			</div>
+
 			<div class="actions">
 				<button id="calc-add">Endzeit berechnen</button>
 				<button id="clear-add" class="secondary">Zurücksetzen</button>
