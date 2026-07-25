@@ -2,7 +2,7 @@
 
 # Zeitrechner
 
-## [im Browser öffnen →](https://schwanniii.github.io/Zeitrechner/)
+## [im Browser öffnen →](https://jannis-buesing.github.io/Zeitrechner/)
 
 </div>
 
